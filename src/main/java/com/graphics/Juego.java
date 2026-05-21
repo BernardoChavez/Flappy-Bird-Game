@@ -166,14 +166,14 @@ public class Juego {
         }
 
         if (estado == 1 && !modoVictoria) {
-            boolean j1Salto = GLFW.glfwGetKey(ventana, GLFW.GLFW_KEY_SPACE) == GLFW.GLFW_PRESS;
+            boolean j1Salto = GLFW.glfwGetKey(ventana, GLFW.GLFW_KEY_W) == GLFW.GLFW_PRESS;
             if (j1Salto && !j1SaltoPrev) {
                 jugador1.saltar(0.85f);
                 GestorSonido.reproducirSonido("salto.wav");
             }
             j1SaltoPrev = j1Salto;
 
-            boolean j2Salto = GLFW.glfwGetKey(ventana, GLFW.GLFW_KEY_W) == GLFW.GLFW_PRESS;
+            boolean j2Salto = GLFW.glfwGetKey(ventana, GLFW.GLFW_KEY_SPACE) == GLFW.GLFW_PRESS;
             if (j2Salto && !j2SaltoPrev) {
                 jugador2.saltar(0.85f);
                 GestorSonido.reproducirSonido("salto.wav");
@@ -483,7 +483,7 @@ public class Juego {
             else if (estado == 2)
                 msg = "!!! GAME OVER !!! - " + msg + " - [Presiona R para volver]";
             else
-                msg = "JUGANDO... " + msg + " - [ESPACIO / W / FLECHA ARRIBA]";
+                msg = "JUGANDO... " + msg + " - [W / ESPACIO / FLECHA ARRIBA]";
         }
         GLFW.glfwSetWindowTitle(ventana, msg);
     }
